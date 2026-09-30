@@ -1,0 +1,11 @@
+{
+  "processes": [
+    "com.google.android.googlequicksearchbox:search"
+  ],
+  "appCrashObserved": false,
+  "observations": [
+    "Fatal signal 4 (SIGILL), code 2 (ILL_ILLOPN), fault addr 0x7cafc6a4c2f1 in tid 4180 (MemoryInfra), pid 2935 (earchbox:search)"
+  ],
+  "originalLogSha256": "844c3452f24bfc473624b7ff29e4edf722abd1a394de98c462c2e0f10a98d251",
+  "publicationNote": "Raw device log remains local; this is a public crash summary."
+}

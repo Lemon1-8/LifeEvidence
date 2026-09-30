@@ -1,0 +1,8 @@
+内容：《高性价比人生指南》，eternity4719 及项目贡献者。
+https://github.com/eternity4719/HowToLiveBetter
+提交：dc74035713a3d09b5ec4a9a08905170748f54af1
+CC BY 4.0：https://creativecommons.org/licenses/by/4.0/
+原文正文未改写；App 增加分条、章节前言、检索分块和本地索引。原文观点不代表 App 开发者另行核验。
+模型：BAAI/bge-small-zh-v1.5，Beijing Academy of Artificial Intelligence，MIT。
+https://huggingface.co/BAAI/bge-small-zh-v1.5/tree/7999e1d3359715c523056ef9478215996d62a620
+模型经过 INT8 动态量化，保留 CLS pooling 和 L2 normalization。

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="app.shenghuoyouju.GitHeadTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-09-30T07:31:48.891Z" hostname="local-test-host" time="0.003">
+  <properties />
+  <testcase name="rejectsMissingMainEvenWhenHeadAndSimilarBranchExist" classname="app.shenghuoyouju.GitHeadTest" time="0.001" />
+  <testcase name="rejectsInvalidShaAndDuplicateMain" classname="app.shenghuoyouju.GitHeadTest" time="0.001" />
+  <testcase name="rejectsWrongServiceBadLengthAndTrailingData" classname="app.shenghuoyouju.GitHeadTest" time="0.0" />
+  <testcase name="readsExactMainRefAfterUtf8RefAndCapabilities" classname="app.shenghuoyouju.GitHeadTest" time="0.0" />
+  <testcase name="rejectsTruncatedPacketsAndMissingFinalFlush" classname="app.shenghuoyouju.GitHeadTest" time="0.001" />
+  <system-out />
+  <system-err />
+</testsuite>

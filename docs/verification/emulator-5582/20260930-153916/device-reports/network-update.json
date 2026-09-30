@@ -1,0 +1,62 @@
+{
+  "endpoint": "https://github.com/eternity4719/HowToLiveBetter.git/info/refs?service=git-upload-pack",
+  "transport": "git-smart-http-info-refs",
+  "completed": true,
+  "forcedStaleLocalVersion": true,
+  "injectedLocalVersion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "injectedVersionMeaning": "test-only identifier; not upstream history",
+  "bundledCommit": "dc74035713a3d09b5ec4a9a08905170748f54af1",
+  "observedGithubHead": "d63794d5dba477ca42b3309a5ae5b396f330c35f",
+  "manualOnlineStatus": "内容已更新 · d63794d",
+  "manualOnlineMs": 24143.920183,
+  "installedCommit": "d63794d5dba477ca42b3309a5ae5b396f330c35f",
+  "firstAutomaticStatus": "已是最新内容 · d63794d",
+  "automaticAttemptDate": "2026-09-30",
+  "sameDaySecondAutomaticCheckSkipped": true,
+  "automaticFirstAttemptOutcome": "success",
+  "automaticFailureForced": true,
+  "faultInjection": "unreachable-process-proxy-no-direct-fallback",
+  "faultInjectionScope": "test-process ProxySelector and ResponseCache; Wi-Fi remains connected",
+  "directFallbackBlockedBy": "rethrow original IOException after actual proxy socket connection failure",
+  "responseCacheDisabledForFailureChecks": true,
+  "routeSelectorSource": "https://android.googlesource.com/platform/external/okhttp/+/refs/heads/android15-release/okhttp/src/main/java/com/squareup/okhttp/internal/http/RouteSelector.java",
+  "proxySelectionCount": 1,
+  "proxyConnectFailedCount": 1,
+  "proxySocketFailure": "java.net.ConnectException: Failed to connect to /127.0.0.1:9",
+  "forcedAutomaticFailureStatus": "更新未完成，原有内容仍可使用：Failed to connect to /127.0.0.1:9",
+  "failedAutomaticCheckNotRetriedSameDay": true,
+  "sameDayRetryAddedProxySelections": 0,
+  "sameDayRetryAddedSocketFailures": 0,
+  "manualOfflineStatus": "更新未完成，原有内容仍可使用：Unable to resolve host \"github.com\": No address associated with hostname",
+  "manualOfflineMs": 2.989431,
+  "updatedOfflineSearch": {
+    "query": "离职了，社保怎么办",
+    "sourceCommit": "d63794d5dba477ca42b3309a5ae5b396f330c35f",
+    "phase": "REFINED",
+    "elapsedMs": 290.408924,
+    "phases": [
+      "LEXICAL",
+      "REFINED"
+    ],
+    "titles": [
+      "社保断缴不要慌：养老按累计算，医保按规则补",
+      "离职前把工资条、考勤、劳动合同、社保记录和聊天记录先存下来",
+      "不要签「个人原因主动辞职」，那一签就没有 N 了"
+    ],
+    "sourceUrls": [
+      "https://github.com/eternity4719/HowToLiveBetter/blob/d63794d5dba477ca42b3309a5ae5b396f330c35f/book/07-没钱的时候怎么活.md",
+      "https://github.com/eternity4719/HowToLiveBetter/blob/d63794d5dba477ca42b3309a5ae5b396f330c35f/book/19-在职离职和工伤.md",
+      "https://github.com/eternity4719/HowToLiveBetter/blob/d63794d5dba477ca42b3309a5ae5b396f330c35f/book/19-在职离职和工伤.md"
+    ],
+    "bodyLengths": [
+      968,
+      473,
+      584
+    ]
+  },
+  "manualOfflineFailureKeptVersionAndPointer": true,
+  "reloadedOfflineCommit": "d63794d5dba477ca42b3309a5ae5b396f330c35f",
+  "sdk": 35,
+  "pageSize": 16384,
+  "recordedAtEpochMs": 1790753991904
+}

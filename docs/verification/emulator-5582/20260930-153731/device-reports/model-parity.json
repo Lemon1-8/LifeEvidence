@@ -1,0 +1,69 @@
+{
+  "modelCachePresentBefore": false,
+  "graphicsPathExplicitNativeLoad": true,
+  "graphicsPathLoadMs": 1.337299,
+  "coldSessionMs": 4480.374002,
+  "warmSamplesMs": [
+    71.056162,
+    83.758732,
+    58.001829,
+    68.034898,
+    37.626986,
+    26.538287,
+    9.797004,
+    12.578949,
+    8.533324,
+    20.405283,
+    14.542121,
+    19.69273,
+    14.958267,
+    3.989228,
+    33.644196,
+    27.560944,
+    17.516655,
+    126.242487,
+    46.772874
+  ],
+  "warmP50Ms": 26.538287,
+  "warmP95Ms": 126.242487,
+  "comparisons": [
+    {
+      "query": "离职了，社保怎么办",
+      "cosineToHost": 1,
+      "maxAbsoluteError": 0,
+      "durationMs": 4480.374002
+    },
+    {
+      "query": "轻微感冒，吃点什么药？",
+      "cosineToHost": 1,
+      "maxAbsoluteError": 0,
+      "durationMs": 71.056162
+    },
+    {
+      "query": "到底要怎么才能完全防晒",
+      "cosineToHost": 1,
+      "maxAbsoluteError": 0,
+      "durationMs": 83.758732
+    },
+    {
+      "query": "钓鱼的技巧有哪些",
+      "cosineToHost": 1,
+      "maxAbsoluteError": 0,
+      "durationMs": 58.001829
+    },
+    {
+      "query": "电脑开不了机了，是什么情况",
+      "cosineToHost": 1,
+      "maxAbsoluteError": 0,
+      "durationMs": 68.034898
+    }
+  ],
+  "sdk": 35,
+  "supportedAbis": [
+    "x86_64",
+    "arm64-v8a"
+  ],
+  "pageSize": 16384,
+  "device": "sdk_gphone16k_x86_64",
+  "recordedAtEpochMs": 1790753869041
+}

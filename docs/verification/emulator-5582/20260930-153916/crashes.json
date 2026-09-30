@@ -1,0 +1,12 @@
+{
+  "processes": [
+    "com.google.android.gms.persistent"
+  ],
+  "appCrashObserved": false,
+  "observations": [
+    "FATAL EXCEPTION: ReferenceQueueDaemon",
+    "java.lang.NullPointerException: Attempt to read from field 'java.lang.ref.ReferenceQueue java.lang.ref.Reference.queue' on a null object reference in method 'void java.lang.ref.ReferenceQueue.enqueuePending(java.lang.ref.Reference, java.util.concurrent.atomic.AtomicInteger)'"
+  ],
+  "originalLogSha256": "3c3a417917dc04531450b13670d41b6354f6df13a987064d6182d499bb059d80",
+  "publicationNote": "Raw device log remains local; this is a public crash summary."
+}

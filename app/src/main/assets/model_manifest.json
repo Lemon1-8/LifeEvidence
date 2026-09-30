@@ -1,0 +1,23 @@
+{
+  "modelId": "BAAI/bge-small-zh-v1.5",
+  "modelRevision": "7999e1d3359715c523056ef9478215996d62a620",
+  "modelSha256": "2c050373e3652a628c4ea6e0476b956c793754001c8633c95a2f123083a9d5cc",
+  "dimension": 512,
+  "tokenLimit": 350,
+  "indexVersion": 1,
+  "onnxOpset": 17,
+  "queryPrefix": "为这个句子生成表示以用于检索相关文章：",
+  "pooling": "CLS + L2 normalization",
+  "quantization": "dynamic per-channel QInt8 MatMul/Gemm",
+  "tokenizerSha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c",
+  "corpusSha256": "5183cd2510d8617725afae173f5d786b3cc08c64c086bca7311da1da90d9d0aa",
+  "vectorsSha256": "955984429e4cbab23f0583dc9c1e8c4e1fc02bc1da69055d07278bb3f47a16a2",
+  "sourceCommit": "dc74035713a3d09b5ec4a9a08905170748f54af1",
+  "documentCount": 686,
+  "chunkCount": 3827,
+  "tools": {
+    "torch": "2.6.0+cu124",
+    "onnxruntime": "1.24.3"
+  },
+  "lexicalSha256": "a9aeb26022ed7f519457dc9da848300221743c28a5695c589f02bcb169358c34"
+}

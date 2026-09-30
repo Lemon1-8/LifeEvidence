@@ -1,0 +1,11 @@
+{
+  "avd": "LifeEvidence_API35",
+  "serial": "emulator-5580",
+  "api": "35",
+  "abi": "x86_64",
+  "pageSize": 4096,
+  "cpuCores": 4,
+  "ramConfiguredMb": 4096,
+  "memTotalKb": 4013932,
+  "checkedAt": "2026-09-30T14:34:44.9640087+08:00"
+}

@@ -1,0 +1,6 @@
+* text=auto
+gradlew text eol=lf
+gradlew.bat text eol=crlf
+# Assets are versioned by their byte hashes; preserve them on every platform.
+app/src/main/assets/** -text
+tools/licenses/** -text

@@ -1,0 +1,162 @@
+[
+  {
+    "file": "app-arm64-v8a-release.apk",
+    "abi": "arm64-v8a",
+    "bytes": 102553101,
+    "sha256": "0b9f2a06611eec151c5b9bedfbadd7243c14c6d28433bccfc839a8f9d6c02326",
+    "native": [
+      {
+        "file": "lib/arm64-v8a/libandroidx.graphics.path.so",
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "relro": [
+          {
+            "end": 24576,
+            "endAligned16KB": false
+          }
+        ]
+      },
+      {
+        "file": "lib/arm64-v8a/libonnxruntime.so",
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "relro": [
+          {
+            "end": 25837568,
+            "endAligned16KB": true
+          }
+        ]
+      },
+      {
+        "file": "lib/arm64-v8a/libonnxruntime4j_jni.so",
+        "loadAlignments": [
+          16384,
+          16384
+        ],
+        "relro": [
+          {
+            "end": 98304,
+            "endAligned16KB": true
+          }
+        ]
+      }
+    ],
+    "assets": {
+      "corpus.json": "5183cd2510d8617725afae173f5d786b3cc08c64c086bca7311da1da90d9d0aa",
+      "dexopt/baseline.prof": "d009ca353f88cf87d7b8b9feac0b6dc6509ece7fe38aa2b2b20cb1fccec99ab5",
+      "dexopt/baseline.profm": "c14d02d9766bff5c900f8b9f317aba0d02daf6b52037bdba502b58412ce3d0da",
+      "embedding_golden.json": "ff2f370f5ef13d95327f64762044bcb1ae8461d4aac8951b353a45be420b662c",
+      "lexical.json": "a9aeb26022ed7f519457dc9da848300221743c28a5695c589f02bcb169358c34",
+      "licenses/ATTRIBUTION.txt": "0f4c7e5e133ee76cc475ee08ce60dce03ae889cfa6fec2700273c9b9c4daf000",
+      "licenses/BGE-MIT.txt": "587a673933425dbc36ec61268d3b954051b2d3ef3c9b322ede357976055ffdd5",
+      "licenses/HowToLiveBetter-CC-BY-4.0.txt": "d07988f4be47912f75a73b44da8a9c0b602bf6c8ced69de858b848f379ecd973",
+      "licenses/ONNXRuntime-MIT.txt": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+      "model.onnx": "2c050373e3652a628c4ea6e0476b956c793754001c8633c95a2f123083a9d5cc",
+      "model_manifest.json": "1fc348cd58bd8fe52b4b710bedb961398845c522779a78cc701632ca9bd426a5",
+      "parser_golden.json": "5db147279a4a78f9150cca5fd9853a247940a9b3541d64c0f49705dbead84ea6",
+      "parser_source_fixture.json": "43d5981de2e84202d98f3fe4388f0ac7a430656612d2027731c7c08e593981e1",
+      "tokenizer_golden.json": "7955eb87185af017c91473d9c0d4d105e1af356851223f11a680ee1733d26f11",
+      "vectors.bin": "955984429e4cbab23f0583dc9c1e8c4e1fc02bc1da69055d07278bb3f47a16a2",
+      "vocab.txt": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
+    },
+    "dexSha256": {
+      "classes.dex": "900bccfca5f5dcc12db38271452c098f69789090e001fbcca485702f3c15acd1",
+      "classes2.dex": "da3d972d492d753a4f1866903c21ffc672317b39f200cfecfad4953a270ecd9f"
+    },
+    "zipAligned16KB": true,
+    "signature": {
+      "verified": true,
+      "certificateSha256": [
+        "051465e79fc8a75464a4a68a42d6e0df4ccf9d691ea06e2cd9973ab4c8bb15a0"
+      ],
+      "publicOutput": "app-arm64-v8a-release-apksigner.txt"
+    },
+    "signersMatchAcrossAbis": true
+  },
+  {
+    "file": "app-x86_64-release.apk",
+    "abi": "x86_64",
+    "bytes": 108030180,
+    "sha256": "f93ac927d78e39b136a7fc242e3022ab9aa78ea98a3be12c1c6693a123a70e6b",
+    "native": [
+      {
+        "file": "lib/x86_64/libandroidx.graphics.path.so",
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "relro": [
+          {
+            "end": 28672,
+            "endAligned16KB": false
+          }
+        ]
+      },
+      {
+        "file": "lib/x86_64/libonnxruntime.so",
+        "loadAlignments": [
+          16384,
+          16384,
+          16384
+        ],
+        "relro": [
+          {
+            "end": 31326208,
+            "endAligned16KB": true
+          }
+        ]
+      },
+      {
+        "file": "lib/x86_64/libonnxruntime4j_jni.so",
+        "loadAlignments": [
+          16384,
+          16384
+        ],
+        "relro": [
+          {
+            "end": 98304,
+            "endAligned16KB": true
+          }
+        ]
+      }
+    ],
+    "assets": {
+      "corpus.json": "5183cd2510d8617725afae173f5d786b3cc08c64c086bca7311da1da90d9d0aa",
+      "dexopt/baseline.prof": "d009ca353f88cf87d7b8b9feac0b6dc6509ece7fe38aa2b2b20cb1fccec99ab5",
+      "dexopt/baseline.profm": "c14d02d9766bff5c900f8b9f317aba0d02daf6b52037bdba502b58412ce3d0da",
+      "embedding_golden.json": "ff2f370f5ef13d95327f64762044bcb1ae8461d4aac8951b353a45be420b662c",
+      "lexical.json": "a9aeb26022ed7f519457dc9da848300221743c28a5695c589f02bcb169358c34",
+      "licenses/ATTRIBUTION.txt": "0f4c7e5e133ee76cc475ee08ce60dce03ae889cfa6fec2700273c9b9c4daf000",
+      "licenses/BGE-MIT.txt": "587a673933425dbc36ec61268d3b954051b2d3ef3c9b322ede357976055ffdd5",
+      "licenses/HowToLiveBetter-CC-BY-4.0.txt": "d07988f4be47912f75a73b44da8a9c0b602bf6c8ced69de858b848f379ecd973",
+      "licenses/ONNXRuntime-MIT.txt": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+      "model.onnx": "2c050373e3652a628c4ea6e0476b956c793754001c8633c95a2f123083a9d5cc",
+      "model_manifest.json": "1fc348cd58bd8fe52b4b710bedb961398845c522779a78cc701632ca9bd426a5",
+      "parser_golden.json": "5db147279a4a78f9150cca5fd9853a247940a9b3541d64c0f49705dbead84ea6",
+      "parser_source_fixture.json": "43d5981de2e84202d98f3fe4388f0ac7a430656612d2027731c7c08e593981e1",
+      "tokenizer_golden.json": "7955eb87185af017c91473d9c0d4d105e1af356851223f11a680ee1733d26f11",
+      "vectors.bin": "955984429e4cbab23f0583dc9c1e8c4e1fc02bc1da69055d07278bb3f47a16a2",
+      "vocab.txt": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
+    },
+    "dexSha256": {
+      "classes.dex": "900bccfca5f5dcc12db38271452c098f69789090e001fbcca485702f3c15acd1",
+      "classes2.dex": "da3d972d492d753a4f1866903c21ffc672317b39f200cfecfad4953a270ecd9f"
+    },
+    "zipAligned16KB": true,
+    "signature": {
+      "verified": true,
+      "certificateSha256": [
+        "051465e79fc8a75464a4a68a42d6e0df4ccf9d691ea06e2cd9973ab4c8bb15a0"
+      ],
+      "publicOutput": "app-x86_64-release-apksigner.txt"
+    },
+    "signersMatchAcrossAbis": true
+  }
+]

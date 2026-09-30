@@ -1,0 +1,14 @@
+.gradle/
+**/build/
+local.properties
+.signing/
+tools/.cache/
+tools/upstream/
+tools/model-source/
+**/__pycache__/
+artifacts/
+.env
+.env.*
+*.jks
+*.keystore
+*.hprof

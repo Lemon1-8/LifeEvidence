@@ -1,0 +1,156 @@
+{
+  "sourceCommit": "dc74035713a3d09b5ec4a9a08905170748f54af1",
+  "documents": 686,
+  "chunks": 3827,
+  "loadMs": 161.672829,
+  "cases": [
+    {
+      "query": "离职了，社保怎么办",
+      "phases": [
+        {
+          "phase": "LEXICAL",
+          "elapsedMs": 45.301185,
+          "titles": [
+            "不要签「个人原因主动辞职」，那一签就没有 N 了",
+            "因为残疾被拒招、不转正、少发钱，可以告，但先把过程成本算清",
+            "离职前把工资条、考勤、劳动合同、社保记录和聊天记录先存下来",
+            "用人第一个月内签书面合同，30 日内办社保登记",
+            "在单位长期被欺负、辱骂、刁难，别硬扛：先记下来留证据，再按性质走投诉、报警或者仲裁",
+            "年休假按累计工龄算 5、10、15 天，没休成的按日工资 300% 折钱"
+          ]
+        },
+        {
+          "phase": "REFINED",
+          "elapsedMs": 409.506824,
+          "titles": [
+            "社保断缴不要慌：养老按累计算，医保按规则补",
+            "离职前把工资条、考勤、劳动合同、社保记录和聊天记录先存下来",
+            "不要签「个人原因主动辞职」，那一签就没有 N 了",
+            "用人第一个月内签书面合同，30 日内办社保登记"
+          ]
+        }
+      ],
+      "finalHits": [
+        {
+          "id": "416d937f67b40cea01ff9ce0",
+          "title": "社保断缴不要慌：养老按累计算，医保按规则补",
+          "relatedOnly": false,
+          "score": 0.10837126523256302
+        },
+        {
+          "id": "6df88640cc6df073a9867859",
+          "title": "离职前把工资条、考勤、劳动合同、社保记录和聊天记录先存下来",
+          "relatedOnly": false,
+          "score": 0.09348958730697632
+        },
+        {
+          "id": "939cd5c12161565c511d0ca0",
+          "title": "不要签「个人原因主动辞职」，那一签就没有 N 了",
+          "relatedOnly": false,
+          "score": 0.0919286459684372
+        },
+        {
+          "id": "dcbcfff43d96e1be0f1a6887",
+          "title": "用人第一个月内签书面合同，30 日内办社保登记",
+          "relatedOnly": false,
+          "score": 0.0867249071598053
+        }
+      ]
+    },
+    {
+      "query": "轻微感冒，吃点什么药？",
+      "phases": [
+        {
+          "phase": "LEXICAL",
+          "elapsedMs": 10.066234,
+          "titles": []
+        },
+        {
+          "phase": "REFINED",
+          "elapsedMs": 236.110935,
+          "titles": [
+            "普通感冒别找医生要抗生素",
+            "同时吃两种感冒药或止痛药之前，先看成分表，对乙酰氨基酚只能占一种",
+            "2 岁以下的孩子感冒，别自己喂复方感冒药和止咳药"
+          ]
+        }
+      ],
+      "finalHits": [
+        {
+          "id": "c6ec8c21ab6c3a3c79c43858",
+          "title": "普通感冒别找医生要抗生素",
+          "relatedOnly": true,
+          "score": 0.07283833622932434
+        },
+        {
+          "id": "b205a991780559b26e250ef3",
+          "title": "同时吃两种感冒药或止痛药之前，先看成分表，对乙酰氨基酚只能占一种",
+          "relatedOnly": true,
+          "score": 0.07132083177566528
+        },
+        {
+          "id": "54dcc25e84b6fa15e87cdee7",
+          "title": "2 岁以下的孩子感冒，别自己喂复方感冒药和止咳药",
+          "relatedOnly": true,
+          "score": 0.06544585525989532
+        }
+      ]
+    },
+    {
+      "query": "到底要怎么才能完全防晒",
+      "phases": [
+        {
+          "phase": "LEXICAL",
+          "elapsedMs": 2.820924,
+          "titles": []
+        },
+        {
+          "phase": "EMPTY",
+          "elapsedMs": 211.993709,
+          "titles": []
+        }
+      ],
+      "finalHits": []
+    },
+    {
+      "query": "钓鱼的技巧有哪些",
+      "phases": [
+        {
+          "phase": "LEXICAL",
+          "elapsedMs": 2.344022,
+          "titles": []
+        },
+        {
+          "phase": "EMPTY",
+          "elapsedMs": 216.46165,
+          "titles": []
+        }
+      ],
+      "finalHits": []
+    },
+    {
+      "query": "电脑开不了机了，是什么情况",
+      "phases": [
+        {
+          "phase": "LEXICAL",
+          "elapsedMs": 5.230209,
+          "titles": []
+        },
+        {
+          "phase": "EMPTY",
+          "elapsedMs": 218.428729,
+          "titles": []
+        }
+      ],
+      "finalHits": []
+    }
+  ],
+  "sdk": 35,
+  "supportedAbis": [
+    "x86_64",
+    "arm64-v8a"
+  ],
+  "pageSize": 4096,
+  "device": "sdk_gphone64_x86_64",
+  "recordedAtEpochMs": 1790753540516
+}

@@ -1,0 +1,66 @@
+{
+  "application": "生活有据",
+  "version": "1.0.0",
+  "targetPhone": "Redmi Note 12 Turbo / Android 15",
+  "realPhoneTested": false,
+  "arm64ApkSha256": "0b9f2a06611eec151c5b9bedfbadd7243c14c6d28433bccfc839a8f9d6c02326",
+  "x86_64ApkSha256": "f93ac927d78e39b136a7fc242e3022ab9aa78ea98a3be12c1c6693a123a70e6b",
+  "instrumentationRuns": [
+    {
+      "summary": "docs/verification/emulator-5580/20260930-153214/summary.json",
+      "passed": true,
+      "testCount": 15,
+      "serial": "emulator-5580"
+    },
+    {
+      "summary": "docs/verification/emulator-5580/20260930-153447/summary.json",
+      "passed": true,
+      "testCount": 1,
+      "serial": "emulator-5580"
+    },
+    {
+      "summary": "docs/verification/emulator-5580/20260930-153404/summary.json",
+      "passed": true,
+      "testCount": 1,
+      "serial": "emulator-5580"
+    },
+    {
+      "summary": "docs/verification/emulator-5580/20260930-153426/summary.json",
+      "passed": true,
+      "testCount": 1,
+      "serial": "emulator-5580"
+    },
+    {
+      "summary": "docs/verification/emulator-5582/20260930-154201/summary.json",
+      "passed": true,
+      "testCount": 15,
+      "serial": "emulator-5582"
+    },
+    {
+      "summary": "docs/verification/emulator-5582/20260930-153916/summary.json",
+      "passed": true,
+      "testCount": 1,
+      "serial": "emulator-5582"
+    },
+    {
+      "summary": "docs/verification/emulator-5582/20260930-154450/summary.json",
+      "passed": true,
+      "testCount": 1,
+      "serial": "emulator-5582"
+    },
+    {
+      "summary": "docs/verification/emulator-5582/20260930-154501/summary.json",
+      "passed": true,
+      "testCount": 1,
+      "serial": "emulator-5582"
+    }
+  ],
+  "instrumentationTestsPassed": 36,
+  "jvmTestsPassed": 11,
+  "realImeRuns": [
+    "docs/verification/ime-final/result.json",
+    "docs/verification/ime-16kb-final/result.json"
+  ],
+  "independentDirectTop3": "23/24 (95.8%)",
+  "validatedLocalDocumentLinks": 40
+}

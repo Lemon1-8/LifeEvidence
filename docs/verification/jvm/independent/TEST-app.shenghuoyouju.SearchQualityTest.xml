@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="app.shenghuoyouju.SearchQualityTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-09-30T07:31:49.159Z" hostname="local-test-host" time="1.822">
+  <properties />
+  <testcase name="evaluateIndependentRetrievalAgainstAnnotatedCases" classname="app.shenghuoyouju.SearchQualityTest" time="1.822" />
+  <system-out>Search test: direct top3 23/24; out-of-corpus 4/4
+</system-out>
+  <system-err />
+</testsuite>

@@ -1,0 +1,15 @@
+{
+  "serial": "emulator-5582",
+  "api": "35",
+  "pageSize": "16384",
+  "offline": false,
+  "clearData": false,
+  "durationSeconds": 32.55,
+  "passed": true,
+  "classes": "app.shenghuoyouju.NetworkUpdateTest",
+  "apkSha256": {
+    "app-x86_64-release.apk": "f93ac927d78e39b136a7fc242e3022ab9aa78ea98a3be12c1c6693a123a70e6b",
+    "app-release-androidTest.apk": "6aceed9faa0f3b3fe22821612710c59803a419c22bb592b434aaf5b2158bffb0"
+  },
+  "artifactDirectory": "artifacts/test-results/emulator-5582/20260930-153916"
+}
