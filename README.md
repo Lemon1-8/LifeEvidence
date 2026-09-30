@@ -6,13 +6,15 @@
 
 App 增加了离线搜索、原文阅读、收藏与内容更新；内容仅做分条、格式处理和索引，未改写正文，也不生成答案。未覆盖的问题可以返回空结果；仅主题相关的材料单独标识。模型采用 [BAAI/bge-small-zh-v1.5](https://huggingface.co/BAAI/bge-small-zh-v1.5)，由北京智源人工智能研究院（BAAI）提供，采用 MIT 许可。完整来源、固定版本及处理说明见 [第三方署名与许可](THIRD_PARTY_NOTICES.md)。
 
-目标设备为红米 Note 12 Turbo / Android 15；最低支持 Android 8。手机安装包为 arm64，模拟器安装包为 x86_64。实际通过的检查、设备页大小、截图和限制以 [测试报告](docs/TEST_REPORT.md) 为准，测试用例存在不代表已执行通过。
+目标设备为红米 Note 12 Turbo / Android 15；最低支持 Android 8。手机安装包为 arm64，模拟器安装包为 x86_64。当前版本实际通过的检查、截图和限制以 [图标更新记录](docs/ICON_UPDATE.md) 为准，初次发布的设备页大小与验收记录见 [测试报告](docs/TEST_REPORT.md)；测试用例存在不代表已执行通过。
 
-1.0.1 版本增加两级折叠目录、目录筛选和阅读定位；本轮构建与测试结果见 [目录改进记录](docs/DIRECTORY_UPDATE.md)，与初次发布安装包的验收记录分开保存。
+1.0.2 版本将软件图标更新为女性二次元头像；本次构建与验证范围见 [图标更新记录](docs/ICON_UPDATE.md)。
+
+1.0.1 版本增加两级折叠目录、目录筛选和阅读定位；该版本构建与测试结果见 [目录改进记录](docs/DIRECTORY_UPDATE.md)，与初次发布安装包的验收记录分开保存。
 
 ## 安装与使用
 
-从 [GitHub Releases](https://github.com/Lemon1-8/LifeEvidence/releases/latest) 下载安装包：`LifeEvidence-1.0.1-arm64.apk` 用于手机，`LifeEvidence-1.0.1-x86_64.apk` 用于模拟器。同页提供完整源码、公开验收记录和 SHA-256 校验文件。1.0.1 的测试范围、关键截图和结构化结果见 [目录改进记录](docs/DIRECTORY_UPDATE.md)；初次发布的双模拟器验收保留在 [1.0.0 测试报告](docs/TEST_REPORT.md)。
+从 [GitHub Releases](https://github.com/Lemon1-8/LifeEvidence/releases/latest) 下载安装包：`LifeEvidence-1.0.2-arm64.apk` 用于手机，`LifeEvidence-1.0.2-x86_64.apk` 用于模拟器。同页提供完整源码、公开验收记录和 SHA-256 校验文件。1.0.2 的测试范围、图标截图和结构化结果见 [图标更新记录](docs/ICON_UPDATE.md)；1.0.1 的目录验收见 [目录改进记录](docs/DIRECTORY_UPDATE.md)，初次发布的双模拟器验收保留在 [1.0.0 测试报告](docs/TEST_REPORT.md)。
 
 完成 release 构建后，两个安装包位于：
 
@@ -128,9 +130,9 @@ python ./tools/verify_apks.py
 
 ## 项目布局
 
-运行 `python tools/package_source.py` 可生成完整源码交付包 `artifacts/生活有据-1.0.1-源码.zip`，包含离线模型、向量、词法索引及测试源码。压缩包不包含签名私钥、本机 SDK 配置、缓存、构建产物和原始设备日志；公开验收证据保存在 `docs/verification`。解压后首次构建会生成新的个人签名，无法直接覆盖使用原交付签名的安装包。
+运行 `python tools/package_source.py` 可生成完整源码交付包 `artifacts/生活有据-1.0.2-源码.zip`，包含离线模型、向量、词法索引及测试源码。压缩包不包含签名私钥、本机 SDK 配置、缓存、构建产物和原始设备日志；公开验收证据保存在 `docs/verification`。解压后首次构建会生成新的个人签名，无法直接覆盖使用原交付签名的安装包。
 
-[Release](https://github.com/Lemon1-8/LifeEvidence/releases/latest) 中的 `LifeEvidence-1.0.1-verification.zip` 收录公开报告、关键截图及结构化验收结果，各报告分别注明其对应版本。完整原始日志仍保留在开发机器的 `artifacts/test-results`，未上传到公开仓库。
+[Release](https://github.com/Lemon1-8/LifeEvidence/releases/latest) 中的 `LifeEvidence-1.0.2-verification.zip` 收录公开报告、关键截图及结构化验收结果，各报告分别注明其对应版本。完整原始日志仍保留在开发机器的 `artifacts/test-results`，未上传到公开仓库。
 
 ```text
 app/src/main/java/app/shenghuoyouju/

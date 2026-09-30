@@ -1,0 +1,36 @@
+[
+  {
+    "abi": "arm64-v8a",
+    "versionName": "1.0.2",
+    "versionCode": 3,
+    "icon": "res/BW.xml",
+    "foreground": "res/Qr.xml",
+    "avatar": "res/Ee.png",
+    "normalAndRoundIconMatch": true,
+    "adaptiveIcon": true,
+    "visibleAvatarPixelsAndAlphaMatchSource": true,
+    "note": "AAPT may normalize RGB values of fully transparent pixels.",
+    "avatarSize": [
+      1254,
+      1254
+    ],
+    "sourceSha256": "1cbf7874b9871f66bf591e424a8b01e21902f22db86cc53f95fb4d0f25684890"
+  },
+  {
+    "abi": "x86_64",
+    "versionName": "1.0.2",
+    "versionCode": 3,
+    "icon": "res/BW.xml",
+    "foreground": "res/Qr.xml",
+    "avatar": "res/Ee.png",
+    "normalAndRoundIconMatch": true,
+    "adaptiveIcon": true,
+    "visibleAvatarPixelsAndAlphaMatchSource": true,
+    "note": "AAPT may normalize RGB values of fully transparent pixels.",
+    "avatarSize": [
+      1254,
+      1254
+    ],
+    "sourceSha256": "1cbf7874b9871f66bf591e424a8b01e21902f22db86cc53f95fb4d0f25684890"
+  }
+]

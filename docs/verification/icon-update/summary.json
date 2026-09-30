@@ -1,0 +1,42 @@
+{
+  "versionName": "1.0.2",
+  "versionCode": 3,
+  "date": "2026-09-30",
+  "build": "assembleRelease -Offline: BUILD SUCCESSFUL; lintVitalRelease passed",
+  "device": {
+    "avd": "LifeEvidence_API35",
+    "serial": "emulator-5580",
+    "api": 35,
+    "abi": "x86_64",
+    "pageSize": 4096
+  },
+  "upgrade": {
+    "command": "adb -s emulator-5580 install -r app-x86_64-release.apk",
+    "result": "Success",
+    "beforeVersion": "1.0.1",
+    "afterVersion": "1.0.2",
+    "firstInstallTimeUnchanged": true,
+    "dataCleared": false
+  },
+  "launch": {
+    "status": "ok",
+    "state": "COLD",
+    "activity": "app.shenghuoyouju/.MainActivity",
+    "totalTimeMs": 1104
+  },
+  "visualChecks": {
+    "launcher": "passed",
+    "appDrawer": "passed",
+    "systemAppInfo": "passed",
+    "mainScreen": "passed",
+    "appDrawerIconTap": "passed"
+  },
+  "notRerun": [
+    "JVM unit tests",
+    "full instrumentation suite",
+    "network updates",
+    "16 KB emulator",
+    "physical Redmi phone",
+    "individual history/favorite persistence assertions"
+  ]
+}
