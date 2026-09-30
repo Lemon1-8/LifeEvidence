@@ -48,7 +48,7 @@
 python ./tools/run_emulator_tests.py --serial emulator-5580 --clear --offline
 ```
 
-默认执行 `CoreIntegrationTest`、`UiFlowTest`、`ResultStabilityTest`。`--offline` 会关闭联网并探测外网不可达；运行结束保持离线，便于复核首次离线启动。联网更新使用独立的 `NetworkUpdateTest`，先显式恢复网络并等 Wi-Fi 连接成功：
+默认执行 `CoreIntegrationTest`、`UiFlowTest`、`ResultStabilityTest`、`DirectoryNavigationTest`，共 23 项。新增目录用例使用内存内容检查折叠、筛选、状态恢复和阅读定位。`--offline` 会关闭联网并探测外网不可达；运行结束保持离线，便于复核首次离线启动。联网更新使用独立的 `NetworkUpdateTest`，先显式恢复网络并等 Wi-Fi 连接成功：
 
 ```powershell
 $adb = "$env:LOCALAPPDATA/Android/Sdk/platform-tools/adb.exe"
@@ -59,7 +59,7 @@ python ./tools/run_emulator_tests.py --serial emulator-5580 --classes app.shengh
 
 切换到 16 KB AVD 后将设备名改为 `emulator-5582`，保持两台顺序运行。每次执行会在 `artifacts/test-results/<设备名>/<时间>/` 保存 APK SHA-256、运行摘要、仪表输出和日志；最终通过项以 [测试报告](TEST_REPORT.md) 为准。
 
-完整 15 项仪表测试包含 composing span 注入；两台 AVD 均需先按下文配置同文 Trime 3.3.12 和 `Composing text`，才能复现最终验收环境。默认 Gboard 环境曾在该注入步骤遇到 InputConnection 重连竞争并超时；这是已记录的测试环境差异，不能据此断言生产 App 依赖同文，也不能将同文通过扩大为所有输入法均通过。
+当前完整套件包含 composing span 注入；两台 AVD 均需先按下文配置同文 Trime 3.3.12 和 `Composing text`，才能复现初次发布的输入法验收环境。默认 Gboard 环境曾在该注入步骤遇到 InputConnection 重连竞争并超时；这是已记录的测试环境差异，不能据此断言生产 App 依赖同文，也不能将同文通过扩大为所有输入法均通过。初次发布的 15 项执行记录与后续新增目录回归分开记录。
 
 ## APK 与中文输入
 

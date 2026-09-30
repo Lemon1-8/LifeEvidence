@@ -23,7 +23,7 @@ def run(serial, *args, check=True):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--serial", default="emulator-5580")
-    parser.add_argument("--classes", default="app.shenghuoyouju.CoreIntegrationTest,app.shenghuoyouju.UiFlowTest,app.shenghuoyouju.ResultStabilityTest")
+    parser.add_argument("--classes", default="app.shenghuoyouju.CoreIntegrationTest,app.shenghuoyouju.UiFlowTest,app.shenghuoyouju.ResultStabilityTest,app.shenghuoyouju.DirectoryNavigationTest")
     parser.add_argument("--offline", action="store_true")
     parser.add_argument("--clear", action="store_true")
     args = parser.parse_args()

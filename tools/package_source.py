@@ -12,8 +12,9 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-DESTINATION = ROOT / "artifacts/生活有据-1.0.0-源码.zip"
-ARCHIVE_ROOT = "LifeEvidence-1.0.0"
+VERSION = "1.0.1"
+DESTINATION = ROOT / f"artifacts/生活有据-{VERSION}-源码.zip"
+ARCHIVE_ROOT = f"LifeEvidence-{VERSION}"
 TOP_FILES = {
     ".gitignore", ".gitattributes", "README.md", "THIRD_PARTY_NOTICES.md", "build.gradle.kts", "settings.gradle.kts",
     "gradle.properties", "gradlew", "gradlew.bat",
@@ -100,7 +101,7 @@ def main():
                         output_file.write(data)
                 entries.append({"path": name, "bytes": byte_count, "sha256": digest.hexdigest()})
             manifest = {
-                "application": "生活有据", "version": "1.0.0", "sourceFileCount": len(entries),
+                "application": "生活有据", "version": VERSION, "sourceFileCount": len(entries),
                 "containsSigningKeys": False,
                 "testEvidence": "公开报告和结构化证据随 docs/TEST_REPORT.md 与 docs/verification 交付；原始设备日志仅保留本地。",
                 "files": entries,

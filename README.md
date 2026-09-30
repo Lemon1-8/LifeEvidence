@@ -8,9 +8,11 @@ App 增加了离线搜索、原文阅读、收藏与内容更新；内容仅做�
 
 目标设备为红米 Note 12 Turbo / Android 15；最低支持 Android 8。手机安装包为 arm64，模拟器安装包为 x86_64。实际通过的检查、设备页大小、截图和限制以 [测试报告](docs/TEST_REPORT.md) 为准，测试用例存在不代表已执行通过。
 
+1.0.1 版本增加两级折叠目录、目录筛选和阅读定位；本轮构建与测试结果见 [目录改进记录](docs/DIRECTORY_UPDATE.md)，与初次发布安装包的验收记录分开保存。
+
 ## 安装与使用
 
-从 [GitHub Releases](https://github.com/Lemon1-8/LifeEvidence/releases/latest) 下载已验收的安装包：`LifeEvidence-1.0.0-arm64.apk` 用于手机，`LifeEvidence-1.0.0-x86_64.apk` 用于模拟器。同页提供完整源码、公开验收记录和 SHA-256 校验文件。验收摘要、关键截图与去除本机路径后的结构化结果也保存在本仓库的 [测试报告](docs/TEST_REPORT.md) 中。
+从 [GitHub Releases](https://github.com/Lemon1-8/LifeEvidence/releases/latest) 下载安装包：`LifeEvidence-1.0.1-arm64.apk` 用于手机，`LifeEvidence-1.0.1-x86_64.apk` 用于模拟器。同页提供完整源码、公开验收记录和 SHA-256 校验文件。1.0.1 的测试范围、关键截图和结构化结果见 [目录改进记录](docs/DIRECTORY_UPDATE.md)；初次发布的双模拟器验收保留在 [1.0.0 测试报告](docs/TEST_REPORT.md)。
 
 完成 release 构建后，两个安装包位于：
 
@@ -22,7 +24,7 @@ App 增加了离线搜索、原文阅读、收藏与内容更新；内容仅做�
 将 arm64 APK 传到手机打开安装，按系统提示允许对应文件管理器安装应用。首次安装后无需登录、下载模型或联网，内置资料和语义模型即可使用。
 
 - **搜索**：输入“离职了，社保怎么办”等口语问题。中文输入法组词期间只查关键词，完成选词后再进行语义检索。结果卡片显示原文摘录和出处；已经滚动的列表等待你点击“相关性已更新”后再刷新。
-- **目录**：按章节浏览全部条目，可切换正文、长文和术语分类。
+- **目录**：一级章节默认折叠，展开后点选二级原文；支持按章节或标题筛选、切换条目/长文/术语、全部收起和回到顶部。进入阅读或切换标签后保留目录展开状态和位置，阅读页右上角可定位回所在目录。
 - **阅读**：搜索结果定位到对应原文段落，保留章节说明和其他上下文；返回后恢复搜索和列表位置。来源链接在浏览器中打开。
 - **收藏**：阅读页右上角的书签保存完整原文快照，上游内容变化后仍保留收藏时的版本。
 - **历史**：只在主动提交搜索或从搜索结果打开原文时记录。首页可单条删除或清空，设置中可关闭记录；关闭记录不会删除原有收藏。
@@ -101,7 +103,7 @@ $env:JAVA_HOME = 'C:/Program Files/Eclipse Adoptium/jdk-17.0.18.8-hotspot'
 python ./tools/verify_apks.py
 ```
 
-最终中文组词验收在两台 AVD 上统一使用官方同文 Trime 3.3.12，并将 `General → Inline preedit mode` 设为 `Composing text`；复现完整 15 项仪表测试前也应配置为这一条件。真实中文输入验证使用 `./tools/android/test-ime.ps1`，安装和配置步骤见环境文档。
+最终中文组词验收在两台 AVD 上统一使用官方同文 Trime 3.3.12，并将 `General → Inline preedit mode` 设为 `Composing text`；复现初次发布的 15 项仪表测试前也应配置为这一条件。当前默认套件另外包含 8 项目录回归测试，共 23 项。真实中文输入验证使用 `./tools/android/test-ime.ps1`，安装和配置步骤见环境文档。
 
 默认 Gboard 环境的 composing span 注入测试曾遇到 InputConnection 重连竞争并超时，记录为测试环境差异。生产 App 没有依赖同文输入法；本次通过范围也不等于所有输入法均已验证。过程截图、最终运行记录和限制见测试报告。
 
@@ -126,9 +128,9 @@ python ./tools/verify_apks.py
 
 ## 项目布局
 
-运行 `python tools/package_source.py` 可生成完整源码交付包 `artifacts/生活有据-1.0.0-源码.zip`，包含离线模型、向量、词法索引及测试源码。压缩包不包含签名私钥、本机 SDK 配置、缓存、构建产物和原始设备日志；公开验收证据保存在 `docs/verification`。解压后首次构建会生成新的个人签名，无法直接覆盖使用原交付签名的安装包。
+运行 `python tools/package_source.py` 可生成完整源码交付包 `artifacts/生活有据-1.0.1-源码.zip`，包含离线模型、向量、词法索引及测试源码。压缩包不包含签名私钥、本机 SDK 配置、缓存、构建产物和原始设备日志；公开验收证据保存在 `docs/verification`。解压后首次构建会生成新的个人签名，无法直接覆盖使用原交付签名的安装包。
 
-[Release](https://github.com/Lemon1-8/LifeEvidence/releases/latest) 中的 `LifeEvidence-1.0.0-verification.zip` 收录公开报告、关键截图及结构化验收结果。完整原始日志仍保留在开发机器的 `artifacts/test-results`，未上传到公开仓库。
+[Release](https://github.com/Lemon1-8/LifeEvidence/releases/latest) 中的 `LifeEvidence-1.0.1-verification.zip` 收录公开报告、关键截图及结构化验收结果，各报告分别注明其对应版本。完整原始日志仍保留在开发机器的 `artifacts/test-results`，未上传到公开仓库。
 
 ```text
 app/src/main/java/app/shenghuoyouju/

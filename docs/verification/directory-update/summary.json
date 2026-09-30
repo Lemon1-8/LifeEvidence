@@ -1,0 +1,73 @@
+{
+  "date": "2026-09-30",
+  "version": "1.0.1",
+  "versionCode": 2,
+  "scope": "directory-navigation-update",
+  "jvm": [
+    {
+      "suite": "app.shenghuoyouju.AssetParityTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-09-30T08:31:58.830Z"
+    },
+    {
+      "suite": "app.shenghuoyouju.DirectoryTreeTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-09-30T08:32:00.022Z"
+    },
+    {
+      "suite": "app.shenghuoyouju.GitHeadTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-09-30T08:32:00.054Z"
+    },
+    {
+      "suite": "app.shenghuoyouju.LexicalAssetTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-09-30T08:32:00.063Z"
+    },
+    {
+      "suite": "app.shenghuoyouju.SearchQualityTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestamp": "2026-09-30T08:32:00.310Z"
+    }
+  ],
+  "instrumentation": {
+    "serial": "emulator-5580",
+    "api": "35",
+    "pageSize": "4096",
+    "offline": false,
+    "clearData": false,
+    "durationSeconds": 25.02,
+    "passed": true,
+    "classes": "app.shenghuoyouju.DirectoryNavigationTest,app.shenghuoyouju.ResultStabilityTest,app.shenghuoyouju.UiFlowTest#largeFontAndDarkThemeKeepPrimaryActionsReachable",
+    "apkSha256": {
+      "app-x86_64-release.apk": "ae5f3945efa16baaac49a01a62eb8d143d409262a6e26998b2bcf35aadd4eaed",
+      "app-release-androidTest.apk": "9abc134982fb0e85bb3f159d52945f390129d38fee1e81f25821b53b967bffc2"
+    },
+    "artifactDirectory": "artifacts/test-results/emulator-5580/20260930-163346"
+  },
+  "instrumentationTestCount": 13,
+  "realPhoneTested": false,
+  "page16KbRetested": false,
+  "arm64ApkSha256": "39f53d7894fd90c763fc7f31951f88c1bd73e9076f665d19b215443ab4366307",
+  "sameSigningCertificateAsVersion100": true,
+  "packages": "packages.json",
+  "screenshots": [
+    "collapsed.png",
+    "expanded.png"
+  ]
+}

@@ -94,6 +94,7 @@ class UiFlowTest {
     fun directoryNavigationAndHistoryPreferences() {
         compose.onNodeWithTag("nav_directory").performClick()
         compose.onNodeWithTag("directory_list").assertExists()
+        compose.onAllNodes(tagStartingWith("directory_chapter_")).onFirst().performClick()
         compose.onAllNodes(tagStartingWith("document_")).onFirst().performClick()
         compose.onNodeWithTag("reader_body").assertExists()
         compose.onNodeWithTag("back_button").performClick()
@@ -136,6 +137,8 @@ class UiFlowTest {
             screenshot("06-dark-large-font")
             compose.onNodeWithTag("nav_directory").assertIsDisplayed().performClick()
             compose.onNodeWithTag("directory_list").assertIsDisplayed()
+            compose.onAllNodes(tagStartingWith("directory_chapter_")).onFirst().performClick()
+            compose.onAllNodes(tagStartingWith("document_")).onFirst().assertIsDisplayed()
             compose.onNodeWithTag("nav_favorites").assertIsDisplayed().performClick()
             compose.onNodeWithTag("settings_button").assertIsDisplayed().performClick()
             compose.onNodeWithTag("update_button").performScrollTo().assertIsDisplayed()

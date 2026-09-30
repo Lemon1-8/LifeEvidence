@@ -25,6 +25,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.saveable.Saver
+import androidx.compose.runtime.saveable.listSaver
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -114,6 +115,11 @@ fun LifeEvidenceApp(state: AppUiState, actions: AppActions) {
     var field by rememberSaveable(stateSaver = TextFieldValue.Saver) { mutableStateOf(TextFieldValue(state.query)) }
     var reader by rememberSaveable(stateSaver = ReadingSaver) { mutableStateOf<SearchHit?>(null) }
     var directoryKind by rememberSaveable { mutableStateOf("") }
+    var directoryQuery by rememberSaveable { mutableStateOf("") }
+    val chapterListSaver = listSaver<List<String>, String>(save = { it }, restore = { it })
+    var expandedChapters by rememberSaveable(stateSaver = chapterListSaver) { mutableStateOf(emptyList<String>()) }
+    var collapsedMatches by rememberSaveable(stateSaver = chapterListSaver) { mutableStateOf(emptyList<String>()) }
+    var directoryRevealId by rememberSaveable { mutableStateOf<String?>(null) }
     var settings by rememberSaveable { mutableStateOf(false) }
     // A new query owns a new scroll anchor, even if its first results have not arrived yet.
     val searchScroll = rememberSaveable(state.query, saver = LazyListState.Saver) { LazyListState() }
@@ -165,6 +171,16 @@ fun LifeEvidenceApp(state: AppUiState, actions: AppActions) {
         if (destination == Destination.SEARCH) actions.onOpenResult(hit)
         reader = hit
     }
+    fun locateInDirectory(document: ContentDocument) {
+        val chapter = buildDirectoryTree(state.documents).firstOrNull { group -> group.documents.any { it.id == document.id } } ?: return
+        directoryKind = ""
+        directoryQuery = ""
+        collapsedMatches = emptyList()
+        if (chapter.key !in expandedChapters) expandedChapters = expandedChapters + chapter.key
+        directoryRevealId = document.id
+        destination = Destination.DIRECTORY
+        reader = null
+    }
 
     BackHandler(reader != null) { reader = null }
     BackHandler(reader == null && destination != Destination.SEARCH) { destination = Destination.SEARCH }
@@ -176,8 +192,19 @@ fun LifeEvidenceApp(state: AppUiState, actions: AppActions) {
             if (reader != null) {
                 TopAppBar(
                     title = { Text("原文阅读", style = MaterialTheme.typography.titleMedium) },
-                    navigationIcon = { IconButton(onClick = { reader = null }, modifier = Modifier.testTag("back_button")) { Icon(Icons.Outlined.ArrowBack, "返回搜索结果") } },
+                    navigationIcon = { IconButton(onClick = { reader = null }, modifier = Modifier.testTag("back_button")) {
+                        Icon(Icons.Outlined.ArrowBack, when (destination) {
+                            Destination.DIRECTORY -> "返回目录"
+                            Destination.FAVORITES -> "返回收藏"
+                            Destination.SEARCH -> "返回搜索结果"
+                        })
+                    } },
                     actions = {
+                        if (state.documents.any { it.id == reader!!.document.id }) {
+                            IconButton(onClick = { locateInDirectory(reader!!.document) }, modifier = Modifier.testTag("reader_locate")) {
+                                Icon(Icons.Outlined.FormatListBulleted, "在目录中定位")
+                            }
+                        }
                         val saved = state.favorites.any { it.id == reader!!.document.id }
                         IconButton(onClick = { actions.onToggleFavorite(reader!!.document) }, modifier = Modifier.testTag("bookmark_toggle")) {
                             Icon(if (saved) Icons.Outlined.Bookmark else Icons.Outlined.BookmarkBorder, if (saved) "取消收藏" else "收藏原文", tint = MaterialTheme.colorScheme.primary)
@@ -242,7 +269,33 @@ fun LifeEvidenceApp(state: AppUiState, actions: AppActions) {
                     onDeleteHistory = actions.onDeleteHistory,
                     onClearHistory = actions.onClearHistory,
                 )
-                destination == Destination.DIRECTORY -> DirectoryScreen(state.documents, directoryScroll, directoryKind, { directoryKind = it }, ::open)
+                destination == Destination.DIRECTORY -> DirectoryScreen(
+                    documents = state.documents,
+                    scroll = directoryScroll,
+                    kind = directoryKind,
+                    query = directoryQuery,
+                    expandedChapters = expandedChapters,
+                    collapsedMatches = collapsedMatches,
+                    favoriteIds = state.favorites.map { it.id }.toSet(),
+                    revealId = directoryRevealId,
+                    onKindChange = { directoryKind = it; directoryScroll.requestScrollToItem(0) },
+                    onQueryChange = { directoryQuery = it; collapsedMatches = emptyList(); directoryScroll.requestScrollToItem(0) },
+                    onToggleChapter = { key ->
+                        if (directoryQuery.isBlank()) {
+                            expandedChapters = if (key in expandedChapters) expandedChapters - key else expandedChapters + key
+                        } else {
+                            collapsedMatches = if (key in collapsedMatches) collapsedMatches - key else collapsedMatches + key
+                        }
+                    },
+                    onCollapseAll = {
+                        if (directoryQuery.isBlank()) expandedChapters = emptyList()
+                        else collapsedMatches = buildDirectoryTree(state.documents, directoryKind, directoryQuery).map { it.key }
+                        directoryScroll.requestScrollToItem(0)
+                    },
+                    onRevealed = { directoryRevealId = null },
+                    onOpen = ::open,
+                    onFullSearch = ::useQuery,
+                )
                 else -> FavoritesScreen(state.favorites, state.documents, favoriteScroll, ::open)
             }
         }
@@ -446,38 +499,11 @@ private fun TypeLabel(text: String) {
     }
 }
 
-private fun kindLabel(kind: String): String = when (kind.lowercase()) {
+internal fun kindLabel(kind: String): String = when (kind.lowercase()) {
     "article", "essay", "long", "longform" -> "长文"
     "glossary", "term", "terminology" -> "术语"
     "entry", "main", "tip" -> "条目"
     else -> kind.ifBlank { "原文" }
-}
-
-@Composable
-private fun DirectoryScreen(documents: List<ContentDocument>, scroll: LazyListState, kind: String, onKindChange: (String) -> Unit, onOpen: (SearchHit) -> Unit) {
-    val kinds = remember(documents) { documents.map { it.kind }.distinct() }
-    val groups = remember(documents, kind) { documents.filter { kind.isEmpty() || it.kind == kind }.groupBy { it.chapter.ifBlank { "生活资料" } } }
-    LazyColumn(state = scroll, modifier = Modifier.fillMaxSize().testTag("directory_list"), contentPadding = PaddingValues(horizontal = 22.dp, vertical = 14.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        item {
-            Text("一份生活说明书", style = MaterialTheme.typography.headlineMedium)
-            Text("${documents.size} 份原文，按主题慢慢翻。", color = MaterialTheme.colorScheme.onSurfaceVariant, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.padding(top = 7.dp, bottom = 12.dp))
-            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                FilterChip(selected = kind.isEmpty(), onClick = { onKindChange("") }, label = { Text("全部") })
-                kinds.forEach { value -> FilterChip(selected = kind == value, onClick = { onKindChange(value) }, label = { Text(kindLabel(value)) }) }
-            }
-        }
-        groups.forEach { (chapter, docs) ->
-            item(key = "chapter:$chapter") {
-                Row(Modifier.fillMaxWidth().padding(top = 15.dp, bottom = 5.dp), verticalAlignment = Alignment.CenterVertically) {
-                    Box(Modifier.width(3.dp).height(18.dp).clip(RoundedCornerShape(2.dp)).background(MaterialTheme.colorScheme.primary))
-                    Text(chapter, modifier = Modifier.weight(1f).padding(start = 10.dp), style = MaterialTheme.typography.titleMedium)
-                    Text(docs.size.toString(), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                }
-            }
-            items(docs, key = { "directory:${it.id}" }) { doc -> DocumentRow(doc, "", onClick = { onOpen(SearchHit(doc, doc.intro, 0, 0f)) }) }
-        }
-        item { Spacer(Modifier.height(16.dp)) }
-    }
 }
 
 @Composable
