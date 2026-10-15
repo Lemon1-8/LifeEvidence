@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 1200 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="architecture-title architecture-desc" id="architecture-root">
         <title id="architecture-title">生活有据安卓架构</title>
-        <desc id="architecture-desc">展示用户查询经过界面层、主视图模型、双路检索、本地数据和上游内容更新的架构图。</desc>
+        <desc id="architecture-desc">展示用户查询经过界面层、页面协调器、双路检索、本地数据和上游内容更新的架构图。</desc>
         <defs>
       <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
       #architecture-root { --color-paper:   #f5f5f5;
@@ -99,7 +99,7 @@
         <rect x="400" y="264" width="160" height="64" rx="6" fill="#bf4520" stroke="#bf4520" stroke-width="1" fill-opacity="0.08"/>
         <rect x="408" y="272" width="40" height="16" rx="2" fill="none" stroke="#bf4520" stroke-width="0.8" stroke-opacity="0.50"/>
         <text x="428" y="284" fill="#bf4520" font-size="12" font-family="'Geist', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" text-anchor="middle">编排</text>
-        <text x="480" y="300" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" text-anchor="middle">主视图模型</text>
+        <text x="480" y="300" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" text-anchor="middle">页面协调器</text>
         <text x="480" y="316" fill="#4f5d75" font-size="12" font-family="'Geist', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" text-anchor="middle">状态编排</text>
 
         <!-- Node: SearchEngine -->
